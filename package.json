@@ -1,0 +1,20 @@
+{
+  "your": "json config here",
+  "name": "packkkk",
+  "version": "1.0.0",
+  "description": "n/a",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarley006/nothing/tree/main/sample-packages/npm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swarley006/nothing/issues"
+  },
+  "homepage": "https://github.com/swarley006/nothing/tree/main#readme"
+}
