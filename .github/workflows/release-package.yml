@@ -1,35 +1,20 @@
-
-name: Create and publish a Docker image
-
+name: Publish package to GitHub Packages
 on: push
-
 jobs:
-  run-npm-build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: npm install and build webpack
-        run: |
-          npm install
-          npm run build
-
-  build-and-push-image:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write 
+      packages: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Log in to GitHub Docker Registry
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
         with:
-          registry: docker.YOUR-HOSTNAME.com
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-        with:
-          push: true
-          tags: |
-            docker.YOUR-HOSTNAME.com/${{ github.repository }}/octo-image:${{ github.sha }}
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
