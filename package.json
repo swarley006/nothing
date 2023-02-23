@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swarley006/nothing/tree/main/sample-packages/npm.git"
+    "url": "https://github.com/swarley006/nothing/tree/main/sample-packages/npm.git"
   },
   "author": "",
   "license": "ISC",
