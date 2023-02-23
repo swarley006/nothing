@@ -10,8 +10,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd sample-packages
-      - run: cd npm
+      - run: cd sample-packages/npm
       - run: npm ci
 
   publish-gpr:
