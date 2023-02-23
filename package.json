@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/swarley006/nothing/tree/main/sample-packages/npm.git"
+    "url": "https://github.com/swarley006/nothing/"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/swarley006/nothing/issues"
   },
-  "homepage": "https://github.com/swarley006/nothing/tree/main#readme"
+  "homepage": "https://github.com/swarley006/nothing/"
 }
